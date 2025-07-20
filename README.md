@@ -1,17 +1,22 @@
-# Machine-Coding-Q-s
+<h1>Machine Coding Question</h1>
 
-<h2>List of Machine Coding Questions with Test cases using Jest + Vitest</h2>
-<h3>Practice</h3>
+<h2>List of Machine Coding Questions using React and Vanilla JS with Test cases using Jest + RTL</h2>
 <ol>
 <li>Progress Bar</li> 
 <li>File Explorer (Test Cases Pending...)</li>
 <li>OTP input using UseRef (Test Cases Pending...)</li>
-<li>To do list (Pending...)</li>
 <li>Tabs (Pending...) </li>
+<li>Multi Stepper Form (Pending...)</li>
+<li>Tic Tac Toe(Pending...) </li>
+<li>Advanced To do list (Pending...)</li>
+<li>Grid Lights (Pending...)</li>
+<li>Count Down Timer(Pending...)</li>
+<li>EMI Calculator (Pending...)</li>
 <li>Dynamic Pagination (Pending...) </li>
 <li>AutoComplete Search Bar (Pending...) </li>
 <li>Drag and Drop (Pending...) </li>
 <li>Nested Comments and Reply (Pending...) </li>
+<li>Chat App using web sockets(Pending...)</li>
 </ol>
 
 <h3>Deployed Features in Client Projects</h3>
