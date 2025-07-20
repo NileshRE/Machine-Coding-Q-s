@@ -3,7 +3,7 @@ import Input from "@components/Common/Input";
 import React, { useEffect, useRef, useState } from "react";
 
 const OtpInput = () => {
-  const otpDigits = Number(import.meta.env.VITE_OTP_COUNT);
+  const otpDigits = 6;
   const [inputArr, setInputArr] = useState(new Array(otpDigits).fill(""));
   const refArr = useRef<Array<HTMLInputElement | null>>(new Array(otpDigits));
   const handleChange = (value: string, index: number) => {
@@ -32,7 +32,7 @@ const OtpInput = () => {
     refArr.current[0]?.focus();
   }, []);
   return (
-    <>
+    <div data-testid="otp-input">
       <Heading heading="OTP Input" />
       <div className="flex items-center justify-center mt-24 gap-1">
         {inputArr.map((_, index) => (
@@ -54,7 +54,7 @@ const OtpInput = () => {
           </>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -8,7 +8,10 @@ const ProgressBar = ({ width }: { width: number }) => {
     }, 200);
   });
   return (
-    <div className="border rounded-full bg-white w-full overflow-hidden border-gray-400">
+    <div
+      className="border rounded-full bg-white w-full overflow-hidden border-gray-400"
+      data-testid="progress-bar"
+    >
       <div
         className={`rounded-full transition ease-in duration-[2000ms] font-medium ${getProgressBarColor(
           animatedProgress

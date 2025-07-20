@@ -31,7 +31,7 @@ const FileExplorer = () => {
     handleDelete,
   } = useFileHandler();
   return (
-    <div className="h-screen">
+    <div className="h-screen" data-testid="file-explorer">
       <Heading heading="File Explorer" />
       <div className="flex flex-col md:grid md:grid-cols-12 h-full">
         <div className="col-span-4 p-3 bg-gray-800 box-border">

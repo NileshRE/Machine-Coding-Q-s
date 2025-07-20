@@ -8,7 +8,7 @@ import Heading from "./Heading";
 const ComponentMap: Record<componentsEnum, JSX.Element> = {
   [componentsEnum.PROGRESSBAR]: (
     <>
-      <Heading heading="OTP Input" />
+      <Heading heading="Progress Bars" />
       <div className="flex flex-col gap-y-4 mx-6 mt-24">
         <ProgressBar width={60} />
         <ProgressBar width={80} />
@@ -24,6 +24,11 @@ const ComponentMap: Record<componentsEnum, JSX.Element> = {
   [componentsEnum.TICTACTOE]: <>Coming Soon...</>,
   [componentsEnum.GRIDLIGHTS]: <>Coming Soon...</>,
   [componentsEnum.MULTISTEPPERFORM]: <>Coming Soon...</>,
+  [componentsEnum.PAGINATION]: <>Coming Soon...</>,
+  [componentsEnum.SEARCH]: <>Coming Soon...</>,
+  [componentsEnum.DRAGNDROP]: <>Coming Soon...</>,
+  [componentsEnum.NESTEDCOMMENTS]: <>Coming Soon...</>,
+  [componentsEnum.CHATAPP]: <>Coming Soon...</>,
 };
 
 const Tabs = () => {
@@ -36,14 +41,15 @@ const Tabs = () => {
   const elementsLength = Object.entries(componentsEnum).length;
 
   return (
-    <div className="">
+    <div>
       <div className="border rounded-full border-gray-400 w-fit mx-auto my-8">
         {Object.entries(componentsEnum)?.map(([key, label], index) => (
           <p
             key={key}
+            data-testid={`tab-${label}`}
             className={`${
               tabSelected == label ? "bg-gray-800 text-white border-none" : ""
-            } px-3 py-2 border-gray-400 border-x inline-flex text-sm cursor-pointer ${
+            } px-2 py-2 border-gray-400 border-x inline-flex text-xs cursor-pointer ${
               index == 0 ? "rounded-r-none rounded-full" : ""
             } ${
               index == elementsLength - 1 ? "rounded-l-none rounded-full" : ""

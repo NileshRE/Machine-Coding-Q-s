@@ -1,6 +1,6 @@
 const Heading = ({
   heading,
-  className = "text-xl py-2 font-medium",
+  className = "text-lg py-2 font-medium",
 }: {
   heading: string;
   className?: string;
