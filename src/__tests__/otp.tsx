@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
-import OtpInput from "./otpInput";
+import OtpInput from "../components/Features/Otp-Input/otpInput";
 
 describe("OtpInput Component", () => {
   it("renders the component with 6 inputs", () => {
