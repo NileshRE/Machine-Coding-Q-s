@@ -3,9 +3,9 @@
 <h2>List of Machine Coding Questions using React and Vanilla JS with Test cases using Jest + RTL</h2>
 <ol>
 <li>Progress Bar</li> 
-<li>File Explorer (Test Cases Pending...)</li>
-<li>OTP input using UseRef (Test Cases Pending...)</li>
 <li>Tabs </li>
+<li>OTP input using UseRef</li>
+<li>File Explorer (Test Cases Pending...)</li>
 <li>Multi Stepper Form (Pending...)</li>
 <li>Tic Tac Toe(Pending...) </li>
 <li>Advanced To do list (Pending...)</li>
