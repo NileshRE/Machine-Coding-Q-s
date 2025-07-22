@@ -8,14 +8,12 @@ const ProgressBar = ({ width }: { width: number }) => {
     }, 200);
   });
   return (
-    <div
-      className="border rounded-full bg-white w-full overflow-hidden border-gray-400"
-      data-testid="progress-bar"
-    >
+    <div className="border rounded-full bg-white w-full overflow-hidden border-gray-400">
       <div
+        data-testid={`progress-bar-${width}`}
         className={`rounded-full transition ease-in duration-[2000ms] font-medium ${getProgressBarColor(
           animatedProgress
-        )}  h-6 text-white text-right`}
+        )} h-6 text-white text-right`}
         style={{ transform: `translateX(${animatedProgress - 100}%)` }}
         role="progressbar"
         aria-valuemax={100}
@@ -23,7 +21,7 @@ const ProgressBar = ({ width }: { width: number }) => {
         aria-valuenow={animatedProgress}
         aria-label="progress-bar"
       >
-        <span className="px-2">{animatedProgress}%</span>
+        {animatedProgress}%
       </div>
     </div>
   );

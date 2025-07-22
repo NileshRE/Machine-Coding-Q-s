@@ -14,6 +14,7 @@ const config: Config = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
+  verbose: true,
 };
 
 export default config;

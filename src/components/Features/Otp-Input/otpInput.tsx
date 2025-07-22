@@ -36,22 +36,21 @@ const OtpInput = () => {
       <Heading heading="OTP Input" />
       <div className="flex items-center justify-center mt-24 gap-1">
         {inputArr.map((_, index) => (
-          <>
+          <div key={`otp-value-${index}`}>
             <label htmlFor={`otp-value-${index}`} className="sr-only">
               {" "}
               {/*  For accessibility */}
               OTP Value {index}
             </label>
             <Input
-              key={`otp-value-${index}`}
               id={`otp-value-${index}`}
               aria-label={`otp-value-${index}`} // For accessibility
-              ref={(el) => (refArr.current[index] = el)} // Mapping input values to ref
+              ref={(el) => void (refArr.current[index] = el)} // Mapping input values to ref
               value={inputArr[index]}
               onChange={(e) => handleChange(e.target.value, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
             />
-          </>
+          </div>
         ))}
       </div>
     </div>
