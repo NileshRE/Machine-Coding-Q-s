@@ -1,6 +1,6 @@
-import FileExplorer from "@components/Features/File-explorer/file-explorer";
-import OtpInput from "@components/Features/Otp-Input/otpInput";
-import ProgressBar from "@components/Features/Progress-bar/ProgressBar";
+import FileExplorer from "@components/Features/File-explorer";
+import OtpInput from "@components/Features/Otp-Input";
+import ProgressBar from "@components/Features/Progress-bar";
 import { componentsEnum } from "@utils/enums";
 import { JSX, useState } from "react";
 import Heading from "./Heading";

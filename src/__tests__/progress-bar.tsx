@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import ProgressBar from "../components/Features/Progress-bar/ProgressBar";
+import ProgressBar from "../components/Features/Progress-bar";
 
 describe("Progress Bar", () => {
   it("renders orange background color", async () => {
