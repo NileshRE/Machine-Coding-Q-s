@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
+import { userEvent } from "@testing-library/user-event";
 import OtpInput from "./otpInput";
 
 describe("OtpInput Component", () => {
@@ -15,12 +16,20 @@ describe("OtpInput Component", () => {
     expect(otpInputs[0]).toHaveFocus();
   });
 
+  it("changes input on pressing tab button", async () => {
+    render(<OtpInput />);
+    const otpInputs = screen.getAllByRole("textbox");
+    expect(otpInputs[0]).toHaveFocus();
+    await userEvent.tab();
+    expect(otpInputs[1]).toHaveFocus();
+  });
+
   it("accepts numeric input and moves to next field", () => {
     render(<OtpInput />);
     const otpInputs = screen.getAllByRole("textbox");
 
-    fireEvent.change(otpInputs[0], { target: { value: "1" } });
-    expect(otpInputs[0]).toHaveValue("1");
+    fireEvent.change(otpInputs[0], { target: { value: "7" } });
+    expect(otpInputs[0]).toHaveValue("7");
     expect(otpInputs[1]).toHaveFocus();
 
     fireEvent.change(otpInputs[1], { target: { value: "2" } });
