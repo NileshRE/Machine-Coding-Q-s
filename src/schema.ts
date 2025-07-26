@@ -4,3 +4,12 @@ export interface fileStrSchema {
   isFolder: boolean;
   children?: fileStrSchema[];
 }
+
+export type StepProps = {
+  onPrev: () => void;
+  onNext: () => void;
+};
+
+export type MultiStepperFormProps = {
+  list: React.ReactElement<StepProps>[];
+};

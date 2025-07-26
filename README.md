@@ -5,7 +5,7 @@
 <li>Progress Bar</li> 
 <li>Tabs </li>
 <li>OTP input using UseRef</li>
-<li>File Explorer (Test Cases Pending...)</li>
+<li>File Explorer</li>
 <li>Multi Stepper Form (Pending...)</li>
 <li>Tic Tac Toe(Pending...) </li>
 <li>Advanced To do list (Pending...)</li>

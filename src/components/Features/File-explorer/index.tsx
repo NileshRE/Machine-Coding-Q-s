@@ -30,6 +30,7 @@ const FileExplorer = () => {
     handleAddFile,
     handleDelete,
   } = useFileHandler();
+
   return (
     <div className="h-screen" data-testid="file-explorer">
       <Heading heading="File Explorer" />
@@ -51,7 +52,8 @@ const FileExplorer = () => {
           />
         </div>
         <div className="col-span-8 text-white p-3 bg-gray-900">
-          {(selectedFileId === null || selectedFileId === undefined) && (
+          {/* If no file seleted or file id is falsy values show empty state */}
+          {!selectedFileId && (
             <div className="h-full flex flex-col gap-4 items-center justify-center">
               <div className="h-72 rounded-t-full rounded-l-md rounded-r-md rounded-b-xl flex items-center justify-center">
                 <PackageOpen className="size-64" />
@@ -61,6 +63,7 @@ const FileExplorer = () => {
               </p>
             </div>
           )}
+          {/* If fileId exists and file Name is found show its details */}
           {fileName && (
             <>
               <h2 className="text-xl font-medium mb-2 first-letter:capitalize">
@@ -146,21 +149,22 @@ export const FileTree = ({
         >
           <div className="p-2 flex items-center justify-between w-full hover:font-medium hover:bg-gray-700 cursor-pointer rounded-md">
             <div className="flex items-center gap-2 w-full">
+              {/* Button to handle opening and closing of folders, if node is not a folder don't render button */}
               {str.isFolder ? (
                 <button
                   onClick={() => handleFolder(str.id)}
-                  aria-label="collapse folder"
+                  aria-label={
+                    folderOpen[str.id] ? "collapse folder" : "expand folder"
+                  }
                 >
                   {folderOpen[str.id] ? (
                     <ChevronDown className="size-4" />
                   ) : (
-                    <ChevronRight
-                      className="size-4 text-gray-500 hover:text-white"
-                      aria-label="expand folder"
-                    />
+                    <ChevronRight className="size-4 text-gray-500 hover:text-white" />
                   )}
                 </button>
               ) : null}
+              {/* Button to show open and closed folder icon */}
               {str.isFolder ? (
                 folderOpen[str.id] ? (
                   <FolderOpen className="size-5" />
@@ -177,6 +181,7 @@ export const FileTree = ({
               </span>
             </div>
             <div className="flex items-center gap-2 mr-2">
+              {/* File adding button */}
               {str.isFolder && (
                 <button
                   onClick={() => handleAddFileToNode(false, str.id)}
@@ -185,6 +190,7 @@ export const FileTree = ({
                   <FilePlus className="size-4 text-gray-500 hover:text-white" />
                 </button>
               )}
+              {/* Folder adding button */}
               {str.isFolder && (
                 <button
                   onClick={() => handleAddFileToNode(true, str.id)}
@@ -193,13 +199,14 @@ export const FileTree = ({
                   <FolderPlus className="size-4 text-gray-500 hover:text-white" />
                 </button>
               )}
+              {/* Delete button */}
               <button
                 onClick={() => handleDelete(str.id)}
-                data-testid="delete"
                 aria-label={`${isFolder ? "delete folder" : "delete file"}`}
               >
                 <Trash2 className="text-red-400 hover:text-red-500 size-4" />
               </button>
+              {/* View File details Button */}
               {!str.isFolder && (
                 <button
                   onClick={() => handleFile(str.id)}
@@ -210,6 +217,7 @@ export const FileTree = ({
               )}
             </div>
           </div>
+          {/* If clicked on Add then show input */}
           {adding[str.id] && (
             <div className="relative">
               <input
@@ -221,25 +229,27 @@ export const FileTree = ({
                 }`}
                 className="text-sm bg-transparent border border-gray-600 rounded-md px-2 py-1 block ml-5 my-2 placeholder:text-xs"
               />
+              {/* If folder is adding show add Folder otherwise add File */}
               {isFolder ? (
                 <button
                   className="text-green-400 text-xs absolute right-2 top-1/2 -translate-y-1/2"
                   onClick={() => handleAdd(str.id)}
-                  aria-label="add folder"
+                  aria-label="save folder"
                 >
-                  Add Folder
+                  Save Folder
                 </button>
               ) : (
                 <button
                   className="text-green-400 text-xs absolute right-2 top-1/2 -translate-y-1/2"
                   onClick={() => handleAdd(str.id)}
-                  aria-label="add file"
+                  aria-label="save file"
                 >
-                  Add File
+                  Save File
                 </button>
               )}
             </div>
           )}
+          {/* If object has a folder and is open and has a children, call file true !!!<< Recursively >>!!! */}
           {str.isFolder && folderOpen[str.id] && str.children && (
             <FileTree
               fileStructure={str.children}
