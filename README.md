@@ -6,16 +6,16 @@
 <li>Tabs </li>
 <li>OTP input using UseRef</li>
 <li>File Explorer</li>
-<li>Multi Stepper Form (Pending...)</li>
+<li>Nested Comments and Reply (Pending...) </li>
 <li>Tic Tac Toe(Pending...) </li>
+<li>Drag and Drop (Pending...) </li>
 <li>Advanced To do list (Pending...)</li>
 <li>Grid Lights (Pending...)</li>
 <li>Count Down Timer(Pending...)</li>
 <li>EMI Calculator (Pending...)</li>
 <li>Dynamic Pagination (Pending...) </li>
 <li>AutoComplete Search Bar (Pending...) </li>
-<li>Drag and Drop (Pending...) </li>
-<li>Nested Comments and Reply (Pending...) </li>
+<li>Multi Stepper Form (Pending...)</li>
 <li>Chat App using web sockets(Pending...)</li>
 </ol>
 
