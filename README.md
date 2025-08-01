@@ -6,7 +6,7 @@
 <li>Tabs </li>
 <li>OTP input using UseRef</li>
 <li>File Explorer</li>
-<li>Nested Comments and Reply (Pending...) </li>
+<li>Nested Comments and Reply</li>
 <li>Tic Tac Toe(Pending...) </li>
 <li>Drag and Drop (Pending...) </li>
 <li>Advanced To do list (Pending...)</li>

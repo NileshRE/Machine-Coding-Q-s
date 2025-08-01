@@ -1,4 +1,5 @@
 import FileExplorer from "@components/Features/File-explorer";
+import NestedComment from "@components/Features/Nested-Comments";
 import OtpInput from "@components/Features/Otp-Input";
 import ProgressBar from "@components/Features/Progress-bar";
 import { componentsEnum } from "@utils/enums";
@@ -18,6 +19,7 @@ const ComponentMap: Record<componentsEnum, JSX.Element> = {
   ),
   [componentsEnum.OTPINPUT]: <OtpInput />,
   [componentsEnum.FILEEXPLORER]: <FileExplorer />,
+  [componentsEnum.NESTEDCOMMENTS]: <NestedComment />,
   [componentsEnum.ADVANCETODO]: <>Coming Soon..</>,
   [componentsEnum.COUNTDOWNTIMER]: <>Coming Soon...</>,
   [componentsEnum.EMICLACULATOR]: <>Coming Soon...</>,
@@ -27,7 +29,6 @@ const ComponentMap: Record<componentsEnum, JSX.Element> = {
   [componentsEnum.PAGINATION]: <>Coming Soon...</>,
   [componentsEnum.SEARCH]: <>Coming Soon...</>,
   [componentsEnum.DRAGNDROP]: <>Coming Soon...</>,
-  [componentsEnum.NESTEDCOMMENTS]: <>Coming Soon...</>,
   [componentsEnum.CHATAPP]: <>Coming Soon...</>,
 };
 
